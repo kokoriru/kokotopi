@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def new
@@ -35,6 +35,10 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id]).destroy
+    redirect_to categories_path
+  end
 
   private
     def category_params
