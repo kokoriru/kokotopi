@@ -1,0 +1,26 @@
+h1 KoKo-ToPi
+
+h2 = @category.name
+
+table
+  tr
+    th 関連トピック
+  - @category.topics.each do |topic|
+    tr
+      td = topic.title
+
+br
+
+small
+  = 'カテゴリ作成日時: '
+  = @category.created_at.strftime('%Y/%m/%d %H:%M')
+
+br
+
+small
+  = 'カテゴリ更新日時: '
+  = @category.updated_at.strftime('%Y/%m/%d %H:%M')
+
+br
+
+= link_to '削除', @category, data: { confirm: '本当に削除しますか' }, method: :delete
