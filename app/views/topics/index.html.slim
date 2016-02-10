@@ -1,0 +1,19 @@
+h1 KoKo-ToPi
+
+h2 カテゴリ一覧
+/ link_to で飛ばしたい
+ul
+  - @categories.each do |category|
+    li = category.name
+
+hr
+
+h2 トピック一覧
+- @categories.each do |category|
+  h3 = category.name
+  ul
+    - category.topics.each do |topic|
+      li
+        = "#{topic.title} コメント数(#{topic.comments.count})"
+        br
+        small = topic.created_at.strftime('%Y/%m/%d %H:%M')

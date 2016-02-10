@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160206092926) do
   create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
+    t.string   "updater"
     t.text     "content"
     t.integer  "category_id"
     t.datetime "created_at",  null: false

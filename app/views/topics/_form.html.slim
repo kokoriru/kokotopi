@@ -1,0 +1,8 @@
+= form_for @comment do |f|
+  table
+    tr
+      th = f.label :author, '投稿者'
+      td = f.text_field :author
+    tr
+      th = f.label :content, '本文'
+      td = f.text_area :content
