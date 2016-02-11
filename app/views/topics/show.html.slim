@@ -1,0 +1,43 @@
+h1 KoKo-ToPi
+
+h2 カテゴリ一覧
+ul
+  - @categories.each do |category|
+    li = category.name
+
+hr
+
+/ トピック編集ボタンをつける
+h2 = @topic.title
+p = @topic.content
+small
+  = 'トピック作成 '
+  = @topic.created_at.strftime('%Y/%m/%d %H:%M')
+  = @topic.author
+br
+small
+  = 'トピック更新 '
+  = @topic.updated_at.strftime('%Y/%m/%d %H:%M')
+  = @topic.updater
+
+hr
+
+== render 'form'
+
+- link_to (button_tag 'コメントする', type: 'button'), { controller: :comment, action: :new }
+
+hr
+- @topic.comments.each do |comment|
+  table
+    tr
+      th = '投稿者'
+      td = comment.author
+    tr
+      th = '本文'
+      td = comment.content
+    tr
+      th
+        small = '投稿日時'
+      td
+        small = @topic.created_at.strftime('%Y/%m/%d %H:%M')
+  hr

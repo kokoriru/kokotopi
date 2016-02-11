@@ -17,7 +17,7 @@ Category.connection.execute(%|SELECT setval ('categories_id_seq', 1, false)|)
   category = Category.create name: "category#{i}"
 
   1.upto(3) do |j|
-    topic = Topic.create title: "title#{i}-#{j}", author: "author#{i}-#{j}", content: "content#{i}-#{j}", category: category
+    topic = Topic.create title: "title#{i}-#{j}", author: "author#{i}-#{j}", updater: "updater#{i}-#{j}", content: "content#{i}-#{j}", category: category
 
     1.upto(3) do |k|
       Comment.create author: "author#{i}-#{j}-#{k}", content: "content#{i}-#{j}-#{k}", topic: topic
