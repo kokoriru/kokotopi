@@ -7,7 +7,6 @@ ul
 
 hr
 
-/ トピック編集ボタンをつける
 h2 = @topic.title
 p = @topic.content
 small
@@ -19,6 +18,12 @@ small
   = 'トピック更新 '
   = @topic.updated_at.strftime('%Y/%m/%d %H:%M')
   = @topic.updater
+br
+= link_to '戻る', topics_path
+'|
+= link_to '編集', edit_topic_path
+'|
+= link_to '削除', @topic, data: { confirm: '本当に削除しますか' }, method: :delete
 
 hr
 
