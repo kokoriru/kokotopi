@@ -1,0 +1,17 @@
+= form_for @topic do |f|
+  table
+    tr
+      th = f.label :author, '投稿者'
+      td = f.text_field :author
+    tr
+      th = f.label :title, 'タイトル'
+      td = f.text_field :title
+    tr
+      th = f.label :content, '本文'
+      td = f.text_field :content
+    tr
+      th = f.label :category_id, 'カテゴリ'
+      td = f.collection_select :category_id, Category.all, :id, :name
+    tr
+      th
+      td = f.submit
