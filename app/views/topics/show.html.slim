@@ -22,9 +22,7 @@ small
 
 hr
 
-== render 'form'
-
-- link_to (button_tag 'コメントする', type: 'button'), { controller: :comment, action: :new }
+== render 'comment_form'
 
 hr
 - @topic.comments.each do |comment|

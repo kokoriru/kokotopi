@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :categories
-  resources :topics
-  resources :comments
+  resources :topics do
+    resources :comments, only: :create
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
