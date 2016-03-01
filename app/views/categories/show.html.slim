@@ -22,5 +22,6 @@ small
   = @category.updated_at.strftime('%Y/%m/%d %H:%M')
 
 br
-
+= link_to '編集', edit_category_path
+br
 = link_to '削除', @category, data: { confirm: '本当に削除しますか' }, method: :delete
