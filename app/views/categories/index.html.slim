@@ -4,3 +4,5 @@ h2 カテゴリ一覧
 ul
   - @categories.each do |category|
     li = category.name
+
+= link_to '新規作成', new_category_path
