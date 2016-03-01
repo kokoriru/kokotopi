@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :topics do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
 
   # Example of regular route:

@@ -25,17 +25,18 @@ hr
 == render 'comment_form'
 
 hr
-- @topic.comments.each do |comment|
-  table
-    tr
-      th = '投稿者'
-      td = comment.author
-    tr
-      th = '本文'
-      td = comment.content
-    tr
-      th
-        small = '投稿日時'
-      td
-        small = @topic.created_at.strftime('%Y/%m/%d %H:%M')
-  hr
+  - @topic.comments.each do |comment|
+    table
+      tr
+        th = '投稿者'
+        td = comment.author
+      tr
+        th = '本文'
+        td = comment.content
+      tr
+        th
+          small = '投稿日時'
+        td
+          small = @topic.created_at.strftime('%Y/%m/%d %H:%M')
+        td = link_to '削除', topic_comment_path(@topic, comment), data: { confirm: '本当に削除しますか' }, method: :delete
+    hr
