@@ -8,7 +8,7 @@ table
     th 関連トピック
   - @category.topics.each do |topic|
     tr
-      td = topic.title
+      td = link_to "#{topic.title}", topic
 
 br
 
