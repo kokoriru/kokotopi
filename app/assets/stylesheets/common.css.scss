@@ -1,7 +1,3 @@
-ul li {
-  list-style: square;
-}
-
 a {
   color: #ff8c00;
   text-decoration: none;
@@ -13,4 +9,18 @@ a {
     color: #ff8c00;
     background-color: #ffffff;
   }
+}
+
+ul li {
+  list-style: square;
+}
+
+.grobal_nav ul li {
+  list-style: none;
+  float: left;
+  margin: 10px;
+}
+
+.clear_b {
+  clear: both;
 }

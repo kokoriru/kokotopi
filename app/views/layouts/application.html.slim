@@ -7,5 +7,10 @@ html
     = csrf_meta_tags
 
   body
+    nav.grobal_nav
+      ul
+        li = link_to 'トピック', topics_path
+        li = link_to 'カテゴリー', categories_path
+    .clear_b
 
     == yield
