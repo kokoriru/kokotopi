@@ -1,0 +1,16 @@
+ul li {
+  list-style: square;
+}
+
+a {
+  color: #ff8c00;
+  text-decoration: none;
+  &:visited {
+    color: #ff8c00;
+  }
+  &:hover {
+    text-decoration: underline;
+    color: #ff8c00;
+    background-color: #ffffff;
+  }
+}
