@@ -1,48 +1,50 @@
 - provide(:title, @topic.title)
 h1 KoKo-ToPi
 
-h2 カテゴリ一覧
-ul
-  - @categories.each do |category|
-    li = link_to category.name, category
+.side_bar
+  h2 カテゴリ一覧
+  ul
+    - @categories.each do |category|
+      li = link_to category.name, category
 
-hr
+  hr
 
-h2 = @topic.title
-p = @topic.content
-small
-  = 'トピック作成 '
-  = @topic.created_at.strftime('%Y/%m/%d %H:%M')
-  = @topic.author
-br
-small
-  = 'トピック更新 '
-  = @topic.updated_at.strftime('%Y/%m/%d %H:%M')
-  = @topic.updater
-br
-= link_to '戻る', topics_path
-'|
-= link_to '編集', edit_topic_path
-'|
-= link_to '削除', @topic, data: { confirm: '本当に削除しますか' }, method: :delete
+.contents
+  h2 = @topic.title
+  p = @topic.content
+  small
+    = 'トピック作成 '
+    = @topic.created_at.strftime('%Y/%m/%d %H:%M')
+    = @topic.author
+  br
+  small
+    = 'トピック更新 '
+    = @topic.updated_at.strftime('%Y/%m/%d %H:%M')
+    = @topic.updater
+  br
+  = link_to '戻る', topics_path
+  '|
+  = link_to '編集', edit_topic_path
+  '|
+  = link_to '削除', @topic, data: { confirm: '本当に削除しますか' }, method: :delete
 
-hr
+  hr
 
-== render 'comment_form'
+  == render 'comment_form'
 
-hr
-  - @topic.comments.each do |comment|
-    table
-      tr
-        th = '投稿者'
-        td = comment.author
-      tr
-        th = '本文'
-        td = comment.content
-      tr
-        th
-          small = '投稿日時'
-        td
-          small = @topic.created_at.strftime('%Y/%m/%d %H:%M')
-        td = link_to '削除', topic_comment_path(@topic, comment), data: { confirm: '本当に削除しますか' }, method: :delete
-    hr
+  hr
+    - @topic.comments.each do |comment|
+      table
+        tr
+          th = '投稿者'
+          td = comment.author
+        tr
+          th = '本文'
+          td = comment.content
+        tr
+          th
+            small = '投稿日時'
+          td
+            small = @topic.created_at.strftime('%Y/%m/%d %H:%M')
+          td = link_to '削除', topic_comment_path(@topic, comment), data: { confirm: '本当に削除しますか' }, method: :delete
+      hr

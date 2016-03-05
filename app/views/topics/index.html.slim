@@ -1,21 +1,23 @@
 h1 KoKo-ToPi
 
-h2 カテゴリ一覧
-ul
-  - @categories.each do |category|
-    li = link_to category.name, category
-
-hr
-
-h2 トピック一覧
-- @categories.each do |category|
-  h3 = category.name
+.side_bar
+  h2 カテゴリ一覧
   ul
-    - category.topics.each do |topic|
-      li
-        = link_to topic.title, topic
-        = "コメント数(#{topic.comments.count})"
-        br
-        small = topic.created_at.strftime('%Y/%m/%d %H:%M')
+    - @categories.each do |category|
+      li = link_to category.name, category
 
-= link_to '新規作成', new_topic_path
+  hr
+
+.contents
+  h2 トピック一覧
+  - @categories.each do |category|
+    h3 = category.name
+    ul
+      - category.topics.each do |topic|
+        li
+          = link_to topic.title, topic
+          = "コメント数(#{topic.comments.count})"
+          br
+          small = topic.created_at.strftime('%Y/%m/%d %H:%M')
+
+  = link_to '新規作成', new_topic_path

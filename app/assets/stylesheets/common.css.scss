@@ -24,3 +24,17 @@ ul li {
 .clear_b {
   clear: both;
 }
+
+.main {
+  width: 100%;
+}
+
+.side_bar {
+  float: left;
+  width: 20%;
+}
+
+.contents {
+  float: left;
+  width: 80%;
+}
