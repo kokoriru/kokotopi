@@ -6,8 +6,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-  body.main
-    nav.grobal_nav
+  body
+    nav
       ul
         li = link_to 'トピック', topics_path
         li = link_to 'カテゴリー', categories_path
