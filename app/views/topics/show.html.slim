@@ -1,7 +1,7 @@
 - provide(:title, @topic.title)
 h1 KoKo-ToPi
 
-.side_bar
+aside
   h2 カテゴリ一覧
   ul
     - @categories.each do |category|
@@ -9,7 +9,7 @@ h1 KoKo-ToPi
 
   hr
 
-.contents
+article
   h2 = @topic.title
   p = @topic.content
   small
