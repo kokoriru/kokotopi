@@ -1,0 +1,6 @@
+h2 カテゴリ一覧
+ul
+  - @categories.each do |category|
+    li = link_to category.name, category
+
+hr
